@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :questions
+
   resources :posts
 
   #this code creates HTTP GET routes for index and about views. Get requests
