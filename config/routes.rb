@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :posts
+
+  resources :topics do
+    resources :posts, except: [:index]
+  end
+
+
+
 
   #this code creates HTTP GET routes for index and about views. Get requests
   #are used to retrieve information identified by the URL
