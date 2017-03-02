@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create]
 
+  post 'users/confirmation' => 'users#confirmation'
 
 
   #this code creates HTTP GET routes for index and about views. Get requests
