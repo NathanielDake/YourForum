@@ -21,6 +21,7 @@
           <%= link_to "Sign In", new_session_path %> or
           <%= link_to "Sign Up", new_user_path %>
         <% end %>
+        <%= image_tag( avatar_url(current_user), class: 'img-rounded') %>
       </div>
 
     </ul>
