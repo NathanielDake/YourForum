@@ -2,25 +2,40 @@
   <div class="col-md-8">
     <div class="media">
       <BR />
-      <% AVATAR_URL = @USER.AVATAR_URL(128) %>
-      <% IF AVATAR_URL %>
-          <DIV CLASS="MEDIA-LEFT">
-            <%= IMAGE_TAG AVATAR_URL, CLASS: 'MEDIA-OBJECT' %>
-          </DIV>
-      <% END %>
-      <DIV CLASS="MEDIA-BODY">
-        <H2 CLASS="MEDIA-HEADING"><%= @USER.NAME %></H2>
-        <SMALL>
-          <%= PLURALIZE(@USER.POSTS.COUNT, 'POST') %>,
-          <%= PLURALIZE(@USER.COMMENTS.COUNT, 'COMMENT') %>
-        </SMALL>
-      </DIV>
+      <% avatar_url = @user.avatar_url(128) %>
+      <% if avatar_url %>
+          <div class="media-left">
+            <%= image_tag avatar_url, class: 'media-object' %>
+          </div>
+      <% end %>
+      <div class="media-body">
+        <h2 class="media-heading"><%= @user.name %></h2>
+        <small>
+          <%= pluralize(@user.posts.count, 'POST') %>,
+          <%= pluralize(@user.comments.count, 'COMMENT') %>
+        </small>
+      </div>
     </div>
   </div>
 </div>
 
-<h2>Posts</h2>
-<%= render @user.posts %>
+<% if(user_has_posts?(@user)) %>
+    <h2>Posts</h2>
+    <%= render @user.posts %>
+<% else %>
+    <p><%= "#{@user.name} has not submitted any posts yet." %></p>
+<% end %>
 
-<h2>Comments</h2>
-<%= render @user.comments %>
+<% if(user_has_comments?(@user)) %>
+    <h2>Comments</h2>
+    <%= render @user.comments %>
+<% else %>
+    <p><%= "#{@user.name} has not submitted any comments yet." %></p>
+<% end %>
+
+<% if(@favorites.count > 0) %>
+    <h2>Favorites</h2>
+    <%= render partial: 'users/favorites' %>
+<% else %>
+    <p><%= "#{@user.name} has not favorited any posts yet." %></p>
+<% end %>omments %>

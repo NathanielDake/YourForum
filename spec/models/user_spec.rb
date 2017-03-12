@@ -1,4 +1,5 @@
 require 'rails_helper'
+include RandomData
 
 RSpec.describe User, type: :model do
   let(:user) { create(:user) }
@@ -93,8 +94,8 @@ RSpec.describe User, type: :model do
 
   describe "#favorite_for(post)" do
     before do
-      topic = topic.create!(name: randomdata.random_sentence, description: randomdata.random_paragraph)
-      @post = topic.posts.create!(title: randomdata.random_sentence, body: randomdata.random_paragraph, user: user)
+      topic = topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)
+      @post = topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: user)
     end
 
     it "returns `nil` if the user has not favorited the post" do

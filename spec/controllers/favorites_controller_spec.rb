@@ -9,7 +9,7 @@ RSpec.describe FavoritesController, type: :controller do
 
   context 'guest user' do
     describe 'POST create' do
-      it 'redirects the user to the sign in view' do
+      it 'redirects the user to the sign in view'
         post :create, { post_id: my_post.id }
         # #7
         expect(response).to redirect_to(new_session_path)
