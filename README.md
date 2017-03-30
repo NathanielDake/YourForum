@@ -38,7 +38,7 @@ This app was created as part of the [Bloc](www.bloc.io) Full Stack Web Developme
 
 + The config/application.example.yml file illustrates how environment variables should be stored.
 
-**To run Bloccit locally:**
+**To run YourForum locally:**
 
 + Clone the repository
 + Run bundle install
