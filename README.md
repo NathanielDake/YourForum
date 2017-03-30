@@ -1,4 +1,3 @@
-![](https://travis-ci.org/BWieber/Bloccit.svg?branch=master)
 
 
 # [YourForum]()
