@@ -43,3 +43,4 @@
 
  gem 'font-awesome-rails'
  gem 'faker'
+ gem 'yaml_db'
