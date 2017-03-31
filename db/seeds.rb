@@ -2,7 +2,7 @@ require 'random_data'
 
 5.times do
   User.create!(
-    name: RandomData.random_name,
+    name: Faker::Name.name,
     email: RandomData.random_email,
     password: RandomData.random_sentence
   )
@@ -11,8 +11,8 @@ users = User.all
 
 15.times do
   Topic.create!(
-    name:         RandomData.random_sentence,
-    description:  RandomData.random_paragraph
+    name:         Faker::Name.title,
+    description:  Faker::Lorem.paragraph
   )
 end
 topics = Topic.all
@@ -21,8 +21,8 @@ topics = Topic.all
   post = Post.create!(
     user: users.sample,
     topic: topics.sample,
-    title: RandomData.random_sentence,
-    body:  RandomData.random_paragraph
+    title: Faker::Name.title,
+    body:  Faker::Lorem.paragraph
   )
 
   post.update_attribute(:created_at, rand(10.minutes .. 1.year).ago)
@@ -35,7 +35,7 @@ posts = Post.all
   Comment.create!(
     user: users.sample,
     post: posts.sample,
-    body: RandomData.random_paragraph
+    body: Faker::Lorem.paragraph
   )
 end
 

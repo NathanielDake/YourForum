@@ -13,6 +13,9 @@
  *= require_tree .
  *= require_self
  */
+/*
+ *= require font-awesome.min
+ */
 
 
 @import "bootstrap-sprockets";
@@ -20,6 +23,7 @@
 
 .user-info {
   margin-top: 9px;
+  vertical-align: middle;
 }
 
 .nav {

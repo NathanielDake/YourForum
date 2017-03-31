@@ -12,6 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery_ujs
+
+//= require jquery.countTo.js
+
+//= require jquery.fitvids.js
+//= require jquery.isotope.min.js
+//= require jquery.js
+
+
+
+
 //= require turbolinks
 //= require bootstrap
 //= require_tree .
