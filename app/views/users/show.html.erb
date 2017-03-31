@@ -2,17 +2,12 @@
   <div class="col-md-8">
     <div class="media">
       <BR />
-      <% AVATAR_URL = @USER.AVATAR_URL(128) %>
-      <% IF AVATAR_URL %>
-          <DIV CLASS="MEDIA-LEFT">
-            <%= IMAGE_TAG AVATAR_URL, CLASS: 'MEDIA-OBJECT' %>
-          </DIV>
-      <% END %>
+
       <DIV CLASS="MEDIA-BODY">
-        <H2 CLASS="MEDIA-HEADING"><%= @USER.NAME %></H2>
+        <H2 CLASS="MEDIA-HEADING"><%= @user.name %></H2>
         <SMALL>
-          <%= PLURALIZE(@USER.POSTS.COUNT, 'POST') %>,
-          <%= PLURALIZE(@USER.COMMENTS.COUNT, 'COMMENT') %>
+          <%= pluralize(@user.posts.count, 'POST') %>,
+          <%= pluralize(@user.comments.count, 'COMMENT') %>
         </SMALL>
       </DIV>
     </div>
